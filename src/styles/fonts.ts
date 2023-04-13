@@ -1,8 +1,10 @@
 import { Tokens } from './tokens';
 
 export const fonts = `
-html {
+html * {
   font-family: 'Lora', Times, serif;
-  color: ${Tokens.text}
+  color: ${Tokens.text};
+  text-align: center;
+  font-size: 1rem
 }
 `;
