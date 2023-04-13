@@ -1,20 +1,25 @@
-import { defineConfig } from "vitest/config";
-import react from "@vitejs/plugin-react";
-import tsconfigPaths from "vite-tsconfig-paths";
-import legacy from "@vitejs/plugin-legacy";
+import { defineConfig } from 'vitest/config';
+import react from '@vitejs/plugin-react';
+import tsconfigPaths from 'vite-tsconfig-paths';
+import legacy from '@vitejs/plugin-legacy';
+import eslint from 'vite-plugin-eslint';
+import path from 'path';
 
 export default defineConfig({
   plugins: [
     tsconfigPaths(),
     react(),
     legacy({
-      targets: ["ie >= 11"],
+      targets: ['ie >= 11'],
+    }),
+    eslint({
+      include: [`${path.resolve(__dirname, '')}/**/*.ts`],
     }),
   ],
   test: {
     globals: true,
-    environment: "jsdom",
+    environment: 'jsdom',
     restoreMocks: true,
-    setupFiles: ["./vitest.setup.ts"],
+    setupFiles: ['./vitest.setup.ts'],
   },
 });
