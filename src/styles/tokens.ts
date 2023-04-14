@@ -21,4 +21,13 @@ export const Tokens = {
   btnUnderlineTertiaryHover: Colors.black,
 
   btnDisabledBackground: Colors.darkGrey,
+  btnDisabledText: Colors.grey,
+
+  inputBorder: Colors.grey,
+  inputBorderActive: Colors.ocean,
+
+  inputDisabledBackground: Colors.grey,
+  inputDisabledText: Colors.darkGrey,
+
+  textFieldErrorText: Colors.error,
 };
