@@ -14,17 +14,19 @@ export const buttonCommon = css({
   cursor: 'pointer',
   ':disabled': {
     backgroundColor: Tokens.btnDisabledBackground,
+    color: Tokens.btnDisabledText,
     cursor: 'not-allowed',
   },
   ':disabled:hover': {
     backgroundColor: Tokens.btnDisabledBackground,
+    color: Tokens.btnDisabledText,
   },
 });
 
 export const buttonPrimary = css({
   backgroundColor: Tokens.btnBackgroundPrimary,
   color: Tokens.btnTextPrimary,
-  transition: 'background-color .2s ease, color .2s ease',
+  transition: 'background-color .2s ease-in, color .2s ease-in',
   '&:hover': {
     backgroundColor: Tokens.btnBackgroundPrimaryHover,
     color: Tokens.btnTextPrimaryHover,
@@ -34,7 +36,7 @@ export const buttonPrimary = css({
 export const buttonSecondary = css({
   backgroundColor: Tokens.btnBackgroundSecondary,
   color: Tokens.btnTextSecondary,
-  transition: 'background-color .2s ease, color .2s ease',
+  transition: 'background-color .2s ease-in, color .2s ease-in',
   '&:hover': {
     backgroundColor: Tokens.btnBackgroundSecondaryHover,
     color: Tokens.btnTextSecondaryHover,
@@ -56,7 +58,7 @@ export const buttonTertiary = css({
     left: 0,
     backgroundColor: Tokens.btnUnderlineTertiaryHover,
     transformOrigin: 'bottom right',
-    transition: 'transform .2s ease',
+    transition: 'transform .2s ease-in',
   },
   '&:hover:after': {
     transform: 'scaleX(1)',
