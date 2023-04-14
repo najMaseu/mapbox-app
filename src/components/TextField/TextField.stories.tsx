@@ -17,6 +17,7 @@ export const Basic: StoryObj<typeof TextField> = {
   args: {
     label: 'Username',
     value: 'xXUsernameXx',
+    readOnly: true,
   },
 };
 
@@ -24,6 +25,7 @@ export const Password: StoryObj<typeof TextField> = {
   args: {
     label: 'Password',
     type: 'password',
+    readOnly: true,
     value: 'password',
   },
 };
@@ -41,5 +43,6 @@ export const Disabled: StoryObj<typeof TextField> = {
     type: 'password',
     value: 'password',
     disabled: true,
+    readOnly: true,
   },
 };

@@ -15,6 +15,14 @@ describe('Button component', () => {
   });
 
   describe('Button disabled', () => {
+    it('should be disabled', () => {
+      render(<Button label='test' disabled />);
+
+      const btn = screen.getByRole('button');
+
+      expect(btn).toBeDisabled();
+    });
+
     it('does not call function passed to onClick', () => {
       const mockOnClick = vi.fn();
       render(<Button onClick={mockOnClick} label='test' disabled />);

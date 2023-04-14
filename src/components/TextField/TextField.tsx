@@ -1,17 +1,20 @@
-import { ReactNode } from 'react';
-import Input, { InputProps } from '../Input/Input';
+import { ReactNode, useId } from 'react';
+import Input, { InputProps } from './Input/Input';
 import { errorMessage, fieldLabel, textField } from './TextField.styles';
 
 interface TextfieldProps extends InputProps {
   label: ReactNode;
-  errorMsg: ReactNode;
+  errorMsg?: ReactNode;
 }
 
 function TextField({ label, errorMsg, ...inputProps }: TextfieldProps) {
+  const id = useId();
   return (
     <span className={textField}>
-      <span className={fieldLabel}>{label}</span>
-      <Input {...inputProps} />
+      <label htmlFor={id} className={fieldLabel}>
+        {label}
+      </label>
+      <Input id={id} {...inputProps} />
       <span className={errorMessage}>{errorMsg}</span>
     </span>
   );
