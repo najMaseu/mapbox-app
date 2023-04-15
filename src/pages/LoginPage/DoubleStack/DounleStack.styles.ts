@@ -10,54 +10,71 @@ export const stackContainer = css({
 });
 
 export const innerCard = css({
+  position: 'relative',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  transitionProperty: 'flex-grow, transform, background-color',
+  transitionProperty: 'flex-grow, background-color',
   transitionDuration: '.2s',
   transitionTimingFunction: 'ease-in-out',
-  transform: 'scale(1)',
   '&[aria-expanded="true"]': {
-    flexGrow: 15,
+    flexGrow: 8,
+    zIndex: 2,
   },
   '&[aria-expanded="false"]': {
     flexGrow: 1,
+    zIndex: 1,
   },
   '&[aria-expanded="false"]:hover, &[aria-expanded="false"]:focus': {
-    transform: 'scale(1.1)',
+    flexGrow: 2,
   },
 });
 
 export const mainCard = css({
   backgroundColor: Tokens.mainCardBackground,
-  transformOrigin: 'right',
 
   '&[aria-expanded="false"]:hover, &[aria-expanded="false"]:focus': {
-    transformOrigin: 'right',
     backgroundColor: Tokens.mainCardBackgroundHover,
   },
 });
 
 export const secondaryCard = css({
   backgroundColor: Tokens.secondaryCardBackground,
-  transformOrigin: 'left',
 
   '&[aria-expanded="false"]:hover, &[aria-expanded="false"]:focus': {
-    transformOrigin: 'left',
     backgroundColor: Tokens.secondaryCardBackgroundHover,
   },
 });
 
 export const cardContentWrapper = css({
   opacity: 1,
-  width: '100%',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-
-  transition: 'opacity .2s ease-in-out, width .3s ease-in-out',
+  transition: 'opacity .2s ease-in-out',
+  zIndex: 2,
   '&[aria-hidden="true"]': {
     opacity: 0,
-    width: 0,
   },
+});
+
+export const cardTitle = css({
+  position: 'absolute',
+  fontSize: '7rem',
+  textTransform: 'uppercase',
+  writingMode: 'vertical-rl',
+  cursor: 'default',
+  zIndex: 1,
+  userSelect: 'none',
+});
+
+export const mainCardTitleStyles = css({
+  color: Tokens.mainCardTitle,
+  transform: 'rotate(180deg)',
+  left: 0,
+});
+
+export const secondaryCardTitleStyles = css({
+  color: Tokens.secondaryCardTitle,
+  right: 0,
 });

@@ -35,4 +35,7 @@ export const Tokens = {
   mainCardBackgroundHover: Colors.lightGrey,
   secondaryCardBackground: Colors.ocean,
   secondaryCardBackgroundHover: Colors.darkOcean,
+
+  mainCardTitle: Colors.grey,
+  secondaryCardTitle: Colors.white,
 };

@@ -17,7 +17,7 @@ export const Primary: StoryObj<typeof DoubleStack> = {
   args: {
     mainContent: 'Main Content',
     secondaryConent: 'Secondary Content',
-    mainContentCollapsed: 'Main COLLAPSED',
-    secondaryContentCollapsed: 'Secondary COLLAPSED',
+    mainCardTitle: 'Sign In.',
+    secondaryCardTitle: 'Register.',
   },
 };

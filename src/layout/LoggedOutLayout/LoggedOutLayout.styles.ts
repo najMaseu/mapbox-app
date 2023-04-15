@@ -11,7 +11,7 @@ export const container = css({
 });
 
 export const content = css({
-  maxWidth: '1200px',
+  maxWidth: '800px',
   width: '100%',
   height: '100%',
 });

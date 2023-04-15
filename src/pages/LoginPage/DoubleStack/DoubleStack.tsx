@@ -1,25 +1,28 @@
 import { ReactNode, useState, KeyboardEvent } from 'react';
 import {
   cardContentWrapper,
+  cardTitle,
   innerCard,
   mainCard,
+  mainCardTitleStyles,
   secondaryCard,
+  secondaryCardTitleStyles,
   stackContainer,
 } from './DounleStack.styles';
 import { cx } from '@emotion/css';
 
 interface DoubleStackProps {
   mainContent: ReactNode;
-  mainContentCollapsed: ReactNode;
+  mainCardTitle: string;
   secondaryConent: ReactNode;
-  secondaryContentCollapsed: ReactNode;
+  secondaryCardTitle: string;
 }
 
 function DoubleStack({
   mainContent,
   secondaryConent,
-  mainContentCollapsed,
-  secondaryContentCollapsed,
+  mainCardTitle,
+  secondaryCardTitle,
 }: DoubleStackProps) {
   const [isMainContentExpanded, setMainCardExtended] = useState(true);
 
@@ -37,16 +40,14 @@ function DoubleStack({
     <div className={stackContainer}>
       <div
         tabIndex={0}
-        aria-label={!isMainContentExpanded ? 'expand main' : undefined}
+        aria-label={mainCardTitle}
         aria-expanded={isMainContentExpanded}
         role={!isMainContentExpanded ? 'button' : 'region'}
         onClick={!isMainContentExpanded ? switchVisibleCard : undefined}
         onKeyDown={!isMainContentExpanded ? handleKeyDown : undefined}
-        className={cx(mainCard, innerCard)}
+        className={cx(innerCard, mainCard)}
       >
-        <div className={cardContentWrapper} aria-hidden={isMainContentExpanded}>
-          {mainContentCollapsed}
-        </div>
+        <div className={cx(cardTitle, mainCardTitleStyles)}>{mainCardTitle}</div>
         <div className={cardContentWrapper} aria-hidden={!isMainContentExpanded}>
           {mainContent}
         </div>
@@ -54,16 +55,14 @@ function DoubleStack({
 
       <div
         tabIndex={0}
-        aria-label={isMainContentExpanded ? 'expand secondary' : undefined}
-        role={isMainContentExpanded ? 'button' : 'region'}
+        aria-label={secondaryCardTitle}
         aria-expanded={!isMainContentExpanded}
+        role={isMainContentExpanded ? 'button' : 'region'}
         onClick={isMainContentExpanded ? switchVisibleCard : undefined}
         onKeyDown={isMainContentExpanded ? handleKeyDown : undefined}
-        className={cx(secondaryCard, innerCard)}
+        className={cx(innerCard, secondaryCard)}
       >
-        <div className={cardContentWrapper} aria-hidden={!isMainContentExpanded}>
-          {secondaryContentCollapsed}
-        </div>
+        <div className={cx(cardTitle, secondaryCardTitleStyles)}>{secondaryCardTitle}</div>
         <div className={cardContentWrapper} aria-hidden={isMainContentExpanded}>
           {secondaryConent}
         </div>
