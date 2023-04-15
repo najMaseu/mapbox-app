@@ -9,7 +9,7 @@ export default {
 export const Primary: StoryObj<typeof Button> = {
   args: {
     label: 'Sign In',
-    variant: 'primary',
+    variant: 'color',
     onClick: () => console.log('clicked'),
   },
 };
@@ -17,7 +17,7 @@ export const Primary: StoryObj<typeof Button> = {
 export const Secondary: StoryObj<typeof Button> = {
   args: {
     label: 'Sign In',
-    variant: 'secondary',
+    variant: 'grey',
     onClick: () => console.log('clicked'),
   },
 };
@@ -25,7 +25,7 @@ export const Secondary: StoryObj<typeof Button> = {
 export const Tertiary: StoryObj<typeof Button> = {
   args: {
     label: 'Sign In',
-    variant: 'tertiary',
+    variant: 'ghost',
     onClick: () => console.log('clicked'),
   },
 };

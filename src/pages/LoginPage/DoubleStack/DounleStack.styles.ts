@@ -7,16 +7,20 @@ export const stackContainer = css({
   height: '100%',
   transition: 'ease',
   boxShadow: '12px 0px 27px -22px rgba(0, 0, 0, 1)',
+  '@media (max-width: 860px)': {
+    flexDirection: 'column',
+  },
 });
 
 export const innerCard = css({
   position: 'relative',
   display: 'flex',
-  justifyContent: 'center',
   alignItems: 'center',
   transitionProperty: 'flex-grow, background-color',
   transitionDuration: '.2s',
   transitionTimingFunction: 'ease-in-out',
+  flexBasis: '20px',
+
   '&[aria-expanded="true"]': {
     flexGrow: 8,
     zIndex: 2,
@@ -28,11 +32,14 @@ export const innerCard = css({
   '&[aria-expanded="false"]:hover, &[aria-expanded="false"]:focus': {
     flexGrow: 2,
   },
+  '@media (max-width: 860px)': {
+    justifyContent: 'center',
+  },
 });
 
 export const mainCard = css({
   backgroundColor: Tokens.mainCardBackground,
-
+  justifyContent: 'end',
   '&[aria-expanded="false"]:hover, &[aria-expanded="false"]:focus': {
     backgroundColor: Tokens.mainCardBackgroundHover,
   },
@@ -40,6 +47,7 @@ export const mainCard = css({
 
 export const secondaryCard = css({
   backgroundColor: Tokens.secondaryCardBackground,
+  justifyContent: 'start',
 
   '&[aria-expanded="false"]:hover, &[aria-expanded="false"]:focus': {
     backgroundColor: Tokens.secondaryCardBackgroundHover,
@@ -51,10 +59,13 @@ export const cardContentWrapper = css({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  transition: 'opacity .2s ease-in-out',
+  transition: 'opacity .5s ease-in-out',
   zIndex: 2,
+  width: '80%',
   '&[aria-hidden="true"]': {
     opacity: 0,
+    transitionDuration: '0.1s',
+    pointerEvents: 'none',
   },
 });
 
@@ -66,15 +77,30 @@ export const cardTitle = css({
   cursor: 'default',
   zIndex: 1,
   userSelect: 'none',
+
+  '@media (max-width: 860px)': {
+    writingMode: 'unset',
+    top: 10,
+  },
+  '@media (max-width: 580px)': {
+    fontSize: '3rem',
+  },
 });
 
 export const mainCardTitleStyles = css({
   color: Tokens.mainCardTitle,
   transform: 'rotate(180deg)',
   left: 0,
+  '@media (max-width: 860px)': {
+    transform: 'unset',
+    left: 10,
+  },
 });
 
 export const secondaryCardTitleStyles = css({
   color: Tokens.secondaryCardTitle,
   right: 0,
+  '@media (max-width: 860px)': {
+    right: 10,
+  },
 });

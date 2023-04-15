@@ -23,29 +23,29 @@ export const buttonCommon = css({
   },
 });
 
-export const buttonPrimary = css({
-  backgroundColor: Tokens.btnBackgroundPrimary,
-  color: Tokens.btnTextPrimary,
+export const buttonColor = css({
+  backgroundColor: Tokens.btnBackgroundColor,
+  color: Tokens.btnTextColor,
   transition: 'background-color .2s ease-in, color .2s ease-in',
   '&:hover': {
-    backgroundColor: Tokens.btnBackgroundPrimaryHover,
-    color: Tokens.btnTextPrimaryHover,
+    backgroundColor: Tokens.btnBackgroundColorHover,
+    color: Tokens.btnTextColorHover,
   },
 });
 
-export const buttonSecondary = css({
-  backgroundColor: Tokens.btnBackgroundSecondary,
-  color: Tokens.btnTextSecondary,
+export const buttonGrey = css({
+  backgroundColor: Tokens.btnBackgroundGrey,
+  color: Tokens.btnTextGrey,
   transition: 'background-color .2s ease-in, color .2s ease-in',
   '&:hover': {
-    backgroundColor: Tokens.btnBackgroundSecondaryHover,
-    color: Tokens.btnTextSecondaryHover,
+    backgroundColor: Tokens.btnBackgroundGreyHover,
+    color: Tokens.btnTextGreyHover,
   },
 });
 
-export const buttonTertiary = css({
+export const buttonGhost = css({
   backgroundColor: 'transparent',
-  color: Tokens.btnTextTertiary,
+  color: Tokens.btnTextGhost,
   position: 'relative',
   padding: '4px',
   ':after': {
@@ -56,7 +56,7 @@ export const buttonTertiary = css({
     height: '2px',
     bottom: 0,
     left: 0,
-    backgroundColor: Tokens.btnUnderlineTertiaryHover,
+    backgroundColor: Tokens.btnUnderlineGhostHover,
     transformOrigin: 'bottom right',
     transition: 'transform .2s ease-in',
   },

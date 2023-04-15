@@ -48,7 +48,12 @@ function DoubleStack({
         className={cx(innerCard, mainCard)}
       >
         <div className={cx(cardTitle, mainCardTitleStyles)}>{mainCardTitle}</div>
-        <div className={cardContentWrapper} aria-hidden={!isMainContentExpanded}>
+        <div
+          tabIndex={-1}
+          onFocus={!isMainContentExpanded ? switchVisibleCard : undefined}
+          className={cardContentWrapper}
+          aria-hidden={!isMainContentExpanded}
+        >
           {mainContent}
         </div>
       </div>
@@ -63,7 +68,12 @@ function DoubleStack({
         className={cx(innerCard, secondaryCard)}
       >
         <div className={cx(cardTitle, secondaryCardTitleStyles)}>{secondaryCardTitle}</div>
-        <div className={cardContentWrapper} aria-hidden={isMainContentExpanded}>
+        <div
+          tabIndex={-1}
+          className={cardContentWrapper}
+          aria-hidden={isMainContentExpanded}
+          onFocus={isMainContentExpanded ? switchVisibleCard : undefined}
+        >
           {secondaryConent}
         </div>
       </div>

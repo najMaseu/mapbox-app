@@ -6,10 +6,12 @@ export const textField = css({
   flexDirection: 'column',
   width: '100%',
   gap: '4px',
+  marginBottom: '14px',
 });
 
 export const fieldLabel = css({
   fontWeight: 500,
+  fontSize: '1.2rem',
   paddingLeft: '2px',
 });
 

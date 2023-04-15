@@ -1,41 +1,39 @@
 import { Colors } from './colors';
 
 export const Tokens = {
-  text: Colors.black,
+  text: Colors.darkOcean,
 
-  backgroundNeutral: Colors.grey,
-  backgroundColor: Colors.ocean,
-  backgroundAccentText: Colors.darkOcean,
+  backgroundNeutral: Colors.white,
 
-  btnBackgroundPrimary: Colors.ocean,
-  btnTextPrimary: Colors.white,
-  btnBackgroundPrimaryHover: Colors.darkOcean,
-  btnTextPrimaryHover: Colors.grey,
+  btnBackgroundColor: Colors.ocean,
+  btnTextColor: Colors.white,
+  btnBackgroundColorHover: Colors.darkOcean,
+  btnTextColorHover: Colors.grey,
 
-  btnBackgroundSecondary: Colors.grey,
-  btnTextSecondary: Colors.black,
-  btnBackgroundSecondaryHover: Colors.darkGrey,
-  btnTextSecondaryHover: Colors.black,
+  btnBackgroundGrey: Colors.grey,
+  btnTextGrey: Colors.darkOcean,
+  btnBackgroundGreyHover: Colors.darkGrey,
+  btnTextGreyHover: Colors.darkOcean,
 
-  btnTextTertiary: Colors.black,
-  btnUnderlineTertiaryHover: Colors.black,
+  btnTextGhost: Colors.darkOcean,
+  btnUnderlineGhostHover: Colors.darkOcean,
 
   btnDisabledBackground: Colors.darkGrey,
   btnDisabledText: Colors.grey,
 
   inputBorder: Colors.grey,
-  inputBorderActive: Colors.ocean,
+  inputBorderActive: Colors.darkOcean,
 
   inputDisabledBackground: Colors.grey,
   inputDisabledText: Colors.darkGrey,
 
   textFieldErrorText: Colors.error,
 
-  mainCardBackground: Colors.white,
-  mainCardBackgroundHover: Colors.lightGrey,
-  secondaryCardBackground: Colors.ocean,
-  secondaryCardBackgroundHover: Colors.darkOcean,
+  mainCardBackground: Colors.lightGrey,
+  mainCardBackgroundHover: Colors.grey,
+  secondaryCardBackground: Colors.lightOcean,
+  secondaryCardBackgroundHover: Colors.ocean,
 
-  mainCardTitle: Colors.grey,
-  secondaryCardTitle: Colors.white,
+  mainCardTitle: Colors.darkGrey,
+  secondaryCardTitle: Colors.darkOcean,
 };
