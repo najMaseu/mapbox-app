@@ -30,4 +30,9 @@ export const Tokens = {
   inputDisabledText: Colors.darkGrey,
 
   textFieldErrorText: Colors.error,
+
+  mainCardBackground: Colors.white,
+  mainCardBackgroundHover: Colors.lightGrey,
+  secondaryCardBackground: Colors.ocean,
+  secondaryCardBackgroundHover: Colors.darkOcean,
 };

@@ -1,6 +1,7 @@
 export enum Colors {
   grey = '#e3dede',
-  darkGrey = '#4B4444',
+  darkGrey = '#919191',
+  lightGrey = '#F5F3F3',
   ocean = '#19A7CE',
   darkOcean = '#146C94',
   black = '#000000',
