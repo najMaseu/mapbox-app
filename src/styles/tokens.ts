@@ -36,4 +36,9 @@ export const Tokens = {
 
   mainCardTitle: Colors.darkGrey,
   secondaryCardTitle: Colors.darkOcean,
+
+  loader: Colors.ocean,
+  loaderBackdrop: Colors.lightGreyTransparent,
+
+  toastBackground: Colors.error,
 };

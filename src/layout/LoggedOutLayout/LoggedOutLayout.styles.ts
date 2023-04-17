@@ -8,6 +8,7 @@ export const container = css({
   justifyContent: 'center',
   alignItems: 'center',
   backgroundColor: Tokens.backgroundNeutral,
+  color: Tokens.text,
 });
 
 export const content = css({

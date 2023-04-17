@@ -8,5 +8,7 @@ export enum Colors {
   darkOcean = '#0b3b51',
 
   white = '#FFFFFF',
-  error = '#ff0000',
+  error = '#dd1f1f',
+
+  lightGreyTransparent = 'rgba(246, 241, 241, 0.4)',
 }
