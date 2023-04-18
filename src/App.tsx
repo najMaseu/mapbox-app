@@ -1,3 +1,4 @@
+import CountryCodesProvider from 'context/CountryCodesProvider';
 import Dashboard from 'pages/Dashboard/Dashboard';
 import LoginPage from 'pages/LoginPage/LoginPage';
 import { AuthProvider } from 'react-auth-kit';
@@ -19,19 +20,21 @@ function App() {
         cookieSecure={true}
       >
         <BrowserRouter>
-          <Routes>
-            <Route path='/login' element={<LoginPage />} />
-            <Route
-              element={
-                <ProtectedRoute>
-                  <Outlet />
-                </ProtectedRoute>
-              }
-            >
-              <Route path={'/dashboard'} element={<Dashboard />} />
-            </Route>
-            <Route path='*' element={<Navigate to={'/dashboard'} replace />} />
-          </Routes>
+          <CountryCodesProvider>
+            <Routes>
+              <Route path='/login' element={<LoginPage />} />
+              <Route
+                element={
+                  <ProtectedRoute>
+                    <Outlet />
+                  </ProtectedRoute>
+                }
+              >
+                <Route path={'/dashboard'} element={<Dashboard />} />
+              </Route>
+              <Route path='*' element={<Navigate to={'/dashboard'} replace />} />
+            </Routes>
+          </CountryCodesProvider>
         </BrowserRouter>
         <ToastContainer />
       </AuthProvider>
