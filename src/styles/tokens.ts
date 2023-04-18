@@ -41,4 +41,6 @@ export const Tokens = {
   loaderBackdrop: Colors.lightGreyTransparent,
 
   toastBackground: Colors.error,
+
+  dashboardContentBackground: Colors.lightGrey,
 };
