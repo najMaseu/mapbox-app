@@ -4,7 +4,7 @@ import { input } from './Input.styles';
 export type InputProps = InputHTMLAttributes<HTMLInputElement>;
 
 const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
-  return <input ref={ref} className={input} {...props} />;
+  return <input type='text' ref={ref} className={input} {...props} />;
 });
 
 export default Input;
