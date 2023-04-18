@@ -1,9 +1,14 @@
 export enum Colors {
-  grey = '#e3dede',
-  darkGrey = '#4B4444',
-  ocean = '#19A7CE',
-  darkOcean = '#146C94',
-  black = '#000000',
+  lightGrey = '#F6F1F1',
+  grey = '#d3d3d3',
+  darkGrey = '#848484;',
+
+  lightOcean = '#95C2CE',
+  ocean = '#4484A2',
+  darkOcean = '#0b3b51',
+
   white = '#FFFFFF',
-  error = '#a80b00',
+  error = '#dd1f1f',
+
+  lightGreyTransparent = 'rgba(246, 241, 241, 0.4)',
 }

@@ -5,7 +5,6 @@ export const input = css({
   outline: 'none',
   height: '40px',
   border: `1px solid ${Tokens.inputBorder}`,
-  backgroundColor: 'transparent',
   padding: '4px 8px',
   display: 'flex',
   justifyContent: 'center',
@@ -13,6 +12,7 @@ export const input = css({
   transition: 'border-color .2s ease-in',
   margin: '4px 2px 4px 0',
   width: '100%',
+  borderRadius: '3px',
   '&:hover, :focus': {
     borderColor: Tokens.inputBorderActive,
   },
