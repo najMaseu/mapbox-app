@@ -15,9 +15,9 @@ export const useServerData = () => {
     'serverInfo',
     () => getServersInfo(headers),
     {
-      retry: 1,
+      refetchOnWindowFocus: false,
     },
   );
 
-  return { data, isError, isFetching, isLoading };
+  return { data: data ?? [], isError, isFetching, isLoading };
 };
