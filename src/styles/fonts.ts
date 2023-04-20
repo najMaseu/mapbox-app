@@ -1,6 +1,10 @@
+import { Tokens } from './tokens';
+
 export const fonts = `
 html * {
-  font-family: 'Lora', Times, serif;
-  font-size: 1rem
+  font-family: monospace;
+  font-size: 1rem;
+  color: ${Tokens.text};
+
 }
 `;
