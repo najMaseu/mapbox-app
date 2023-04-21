@@ -4,7 +4,7 @@ import { Tokens } from 'styles/tokens';
 export const stackContainer = css({
   display: 'flex',
   width: '100%',
-  height: '100%',
+  minHeight: '100vh',
   transition: 'ease',
   boxShadow: '12px 0px 27px -22px rgba(0, 0, 0, 1)',
   '@media (max-width: 860px)': {

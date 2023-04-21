@@ -1,5 +1,5 @@
 import { ReactNode, forwardRef, useId } from 'react';
-import Input, { InputProps } from './Input/Input';
+import Input, { InputProps } from '../Input/Input';
 import { errorMessage, fieldLabel, textField } from './TextField.styles';
 
 interface TextfieldProps extends InputProps {

@@ -1,7 +1,7 @@
 import { first } from 'lodash';
 import { CountryCodes, ServerDataResult } from 'types/common';
 
-type ServerDataCategorized = {
+export type ServerDataCategorized = {
   countryName: string;
   countryCode?: string;
   servers: {
