@@ -23,6 +23,12 @@ export const Password: StoryObj<typeof Input> = {
   },
 };
 
+export const Ghost: StoryObj<typeof Input> = {
+  args: {
+    variant: 'ghost',
+  },
+};
+
 export const Disabled: StoryObj<typeof Input> = {
   args: {
     disabled: true,
