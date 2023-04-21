@@ -1,6 +1,6 @@
-import CountryCodesProvider from 'context/CountryCodesProvider';
-import Dashboard from 'pages/Dashboard/Dashboard';
-import LoginPage from 'pages/LoginPage/LoginPage';
+import { CountryCodesProvider } from 'context/CountryCodesProvider';
+import { Dashboard } from 'pages/Dashboard/Dashboard';
+import { LoginPage } from 'pages/LoginPage/LoginPage';
 import { AuthProvider } from 'react-auth-kit';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter, Navigate, Outlet, Route, Routes } from 'react-router-dom';
@@ -10,7 +10,7 @@ import { ProtectedRoute } from 'router/ProtectedRoute';
 
 const queryClient = new QueryClient();
 
-function App() {
+export const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider
@@ -40,6 +40,4 @@ function App() {
       </AuthProvider>
     </QueryClientProvider>
   );
-}
-
-export default App;
+};

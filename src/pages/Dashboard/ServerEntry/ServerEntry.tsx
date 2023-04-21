@@ -6,7 +6,12 @@ interface ServerEntryProps {
   distance: number;
   onEntryClick: () => void;
 }
-function ServerEntry({ countryName, serverId, distance, onEntryClick }: ServerEntryProps) {
+export const ServerEntry = ({
+  countryName,
+  serverId,
+  distance,
+  onEntryClick,
+}: ServerEntryProps) => {
   const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
     if (e.key === 'Enter') {
       onEntryClick();
@@ -27,6 +32,4 @@ function ServerEntry({ countryName, serverId, distance, onEntryClick }: ServerEn
       <span>{distance}km</span>
     </div>
   );
-}
-
-export default ServerEntry;
+};

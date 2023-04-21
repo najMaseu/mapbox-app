@@ -1,9 +1,9 @@
-import DoubleStack from 'pages/LoginPage/DoubleStack/DoubleStack';
-import LoggedOutLayout from 'layout/LoggedOutLayout/LoggedOutLayout';
-import LoginForm from './Forms/LoginForm/LoginForm';
-import RegisterForm from './Forms/RegisterForm/RegisterForm';
+import { DoubleStack } from 'pages/LoginPage/DoubleStack/DoubleStack';
+import { LoggedOutLayout } from 'layout/LoggedOutLayout/LoggedOutLayout';
+import { LoginForm } from './Forms/LoginForm/LoginForm';
+import { RegisterForm } from './Forms/RegisterForm/RegisterForm';
 
-function LoginPage() {
+export const LoginPage = () => {
   return (
     <LoggedOutLayout>
       <DoubleStack
@@ -14,6 +14,4 @@ function LoginPage() {
       />
     </LoggedOutLayout>
   );
-}
-
-export default LoginPage;
+};

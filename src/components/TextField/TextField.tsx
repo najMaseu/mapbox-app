@@ -1,13 +1,13 @@
 import { ReactNode, forwardRef, useId } from 'react';
-import Input, { InputProps } from '../Input/Input';
 import { errorMessage, fieldLabel, textField } from './TextField.styles';
+import { Input, InputProps } from 'components/Input/Input';
 
 interface TextfieldProps extends InputProps {
   label: ReactNode;
   errorMsg?: ReactNode;
 }
 
-const TextField = forwardRef<HTMLInputElement, TextfieldProps>((props, ref) => {
+export const TextField = forwardRef<HTMLInputElement, TextfieldProps>((props, ref) => {
   const { label, errorMsg, ...inputProps } = props;
   const id = useId();
 
@@ -21,5 +21,3 @@ const TextField = forwardRef<HTMLInputElement, TextfieldProps>((props, ref) => {
     </span>
   );
 });
-
-export default TextField;

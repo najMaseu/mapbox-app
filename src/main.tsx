@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { fonts } from 'styles/fonts';
 import { reset } from 'styles/reset';
-import App from './App';
+import { App } from './App';
 
 injectGlobal(reset, fonts);
 

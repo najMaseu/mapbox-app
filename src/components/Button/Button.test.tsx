@@ -1,5 +1,5 @@
 import { render, userEvent, screen } from 'tests/utils';
-import Button from './Button';
+import { Button } from './Button';
 import { vi } from 'vitest';
 
 describe('Button component', () => {

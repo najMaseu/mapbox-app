@@ -3,7 +3,7 @@ import { CountryCodes, ServerDataResult } from 'types/common';
 
 export type ServerDataCategorized = {
   countryName: string;
-  countryCode?: string;
+  countryCode: string;
   servers: {
     serverId: string;
     distance: number;
@@ -22,15 +22,15 @@ export const mapServerInfoToCategoried = (
     const countryName = currentInfo.join(' ');
 
     return {
-      serverId,
+      serverId: serverId || 'NO ID',
       countryName,
       distance,
-      countryCode: first(codeEntries.find((entry) => entry[1] === countryName)),
+      countryCode: first(codeEntries.find((entry) => entry[1] === countryName)) || '',
     };
   });
 
   return serverDataDetailed.reduce<ServerDataCategorized[]>(
-    (accumulator, { countryCode, countryName, serverId = 'NO ID', distance }) => {
+    (accumulator, { countryCode, countryName, serverId, distance }) => {
       const itemToCheck = accumulator.find((item) => item.countryName === countryName);
 
       if (!itemToCheck) {

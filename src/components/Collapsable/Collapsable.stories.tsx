@@ -1,4 +1,4 @@
-import Collapsable from './Collapsable';
+import { Collapsable } from './Collapsable';
 import { Meta, StoryObj } from '@storybook/react';
 
 export default {

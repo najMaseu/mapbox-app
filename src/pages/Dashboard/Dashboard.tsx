@@ -1,26 +1,21 @@
-import LoggedInLayout from 'layout/LoggedInLayout/LoggedInLayout';
+import { LoggedInLayout } from 'layout/LoggedInLayout/LoggedInLayout';
 import {
   dashboardContainer,
-  searchLabel,
   serverList,
-  search,
   serverInfoContainer,
-  serverInfo,
-  infoLabel,
-  flagImg,
   chooseServerInfo,
 } from './Dashboard.styles';
 import { useServerData } from 'api/servers/useServerData';
 import { mapServerInfoToCategoried } from './helpers';
 import { useCountryCodes } from 'context/CountryCodesContext';
-import Loader from 'components/Loader/Loader';
-import Collapsable from 'components/Collapsable/Collapsable';
-import ServerEntry from './ServerEntry/ServerEntry';
-import Input from 'components/Input/Input';
-import { ReactComponent as SearchIcon } from 'assets/search.svg';
+import { Loader } from 'components/Loader/Loader';
+import { Collapsable } from 'components/Collapsable/Collapsable';
+import { ServerEntry } from './ServerEntry/ServerEntry';
 import { ChangeEvent, useState } from 'react';
+import { SearchBar } from 'components/SearchBar/SearchBar';
+import { CurrentServerInfo } from './CurrentServerInfo/CurrentServerInfo';
 
-function Dashboard() {
+export const Dashboard = () => {
   const { data, isLoading } = useServerData();
   const codes = useCountryCodes();
   const [searchValue, setSearchValue] = useState('');
@@ -28,10 +23,8 @@ function Dashboard() {
     | {
         countryName: string;
         countryCode?: string;
-        server: {
-          serverId: string;
-          distance: number;
-        };
+        serverId: string;
+        distance: number;
       }
     | undefined
   >();
@@ -49,20 +42,9 @@ function Dashboard() {
         ) : (
           <div className={serverInfoContainer}>
             <div>
-              <span className={search}>
-                <label className={searchLabel} htmlFor='searchBar'>
-                  Search country
-                </label>
-                <SearchIcon />
-                <Input
-                  id='searchBar'
-                  placeholder='Search country...'
-                  variant='ghost'
-                  onChange={handleSearch}
-                  value={searchValue}
-                />
-              </span>
-              <ul className={serverList}>
+              <SearchBar onChange={handleSearch} value={searchValue} />
+
+              <div className={serverList}>
                 {mapServerInfoToCategoried(data, codes)
                   .filter((entry) =>
                     entry.countryName?.toLowerCase().includes(searchValue.toLowerCase()),
@@ -81,38 +63,30 @@ function Dashboard() {
                               setCurroentServer({
                                 countryName: entry.countryName,
                                 countryCode: entry.countryCode,
-                                server,
+                                serverId: server.serverId,
+                                distance: server.distance,
                               });
                             }}
                           />
                         ))}
                     </Collapsable>
                   ))}
-              </ul>
+              </div>
             </div>
-            <div className={serverInfo}>
-              {currentServer ? (
-                <>
-                  <h2>Server {currentServer?.server.serverId} </h2>
-                  <span className={infoLabel}>
-                    Location: {currentServer?.countryName}
-                    <img
-                      src={`https://flagcdn.com/h20/${currentServer?.countryCode}.png`}
-                      height='10'
-                      alt='country flag'
-                      className={flagImg}
-                    />
-                  </span>
-                  <span className={infoLabel}>Distance: {currentServer?.server.distance}km</span>
-                </>
-              ) : (
-                <span className={chooseServerInfo}>👈 Choose a server on the right</span>
-              )}
-            </div>
+
+            {currentServer ? (
+              <CurrentServerInfo
+                serverId={currentServer.serverId}
+                countryName={currentServer.countryName}
+                countryCode={currentServer?.countryCode}
+                distance={currentServer.distance}
+              />
+            ) : (
+              <span className={chooseServerInfo}>👈 Choose a server on the right</span>
+            )}
           </div>
         )}
       </div>
     </LoggedInLayout>
   );
-}
-export default Dashboard;
+};

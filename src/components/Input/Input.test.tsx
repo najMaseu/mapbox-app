@@ -1,5 +1,5 @@
 import { render, screen, userEvent } from 'tests/utils';
-import Input from './Input';
+import { Input } from './Input';
 import { vi } from 'vitest';
 
 describe('Input component', () => {

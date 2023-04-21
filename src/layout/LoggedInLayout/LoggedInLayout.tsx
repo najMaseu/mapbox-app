@@ -1,10 +1,10 @@
 import React from 'react';
 import { WithChildren } from 'types/common';
 import { container, content, navbar } from './LoggedInLayout.styles';
-import Button from 'components/Button/Button';
+import { Button } from 'components/Button/Button';
 import { useSignOut } from 'react-auth-kit';
 
-function LoggedInLayout({ children }: WithChildren) {
+export const LoggedInLayout = ({ children }: WithChildren) => {
   const signOut = useSignOut();
   return (
     <main className={container}>
@@ -21,6 +21,4 @@ function LoggedInLayout({ children }: WithChildren) {
       </div>
     </main>
   );
-}
-
-export default LoggedInLayout;
+};

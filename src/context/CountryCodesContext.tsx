@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import { createContext, useContext } from 'react';
 import { CountryCodes } from 'types/common';
 
-export const CountryCodesContext = React.createContext<CountryCodes | undefined>(undefined);
+export const CountryCodesContext = createContext<CountryCodes | undefined>(undefined);
 
 export const useCountryCodes = () => {
   const context = useContext(CountryCodesContext);

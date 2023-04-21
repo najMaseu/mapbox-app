@@ -1,5 +1,5 @@
 import { userEvent, render, screen, waitFor } from 'tests/utils';
-import LoginForm from './LoginForm';
+import { LoginForm } from './LoginForm';
 import { vi } from 'vitest';
 import { tesonetAxios } from 'api/axios';
 

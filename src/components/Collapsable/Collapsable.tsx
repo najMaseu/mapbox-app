@@ -8,7 +8,7 @@ interface CollapsableProps extends WithChildren {
   onHeaderClick?: () => void;
 }
 
-function Collapsable({ header, children, onHeaderClick }: CollapsableProps) {
+export const Collapsable = ({ header, children, onHeaderClick }: CollapsableProps) => {
   const [isCollapsed, setCollapsed] = useState(true);
 
   const handleHeaderClick = () => {
@@ -39,6 +39,4 @@ function Collapsable({ header, children, onHeaderClick }: CollapsableProps) {
       </div>
     </div>
   );
-}
-
-export default Collapsable;
+};

@@ -4,12 +4,10 @@ import { WithChildren } from 'types/common';
 
 type LoggedOutLayoutProps = WithChildren;
 
-function LoggedOutLayout({ children }: LoggedOutLayoutProps) {
+export const LoggedOutLayout = ({ children }: LoggedOutLayoutProps) => {
   return (
     <main className={container}>
       <div className={content}>{children}</div>
     </main>
   );
-}
-
-export default LoggedOutLayout;
+};
