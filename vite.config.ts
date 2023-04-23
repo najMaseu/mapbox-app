@@ -23,5 +23,10 @@ export default defineConfig({
     environment: 'jsdom',
     restoreMocks: true,
     setupFiles: ['./vitest.setup.ts'],
+    coverage: {
+      provider: 'c8',
+      include: ['src'],
+      exclude: ['src/{assets,tests,types}'],
+    },
   },
 });

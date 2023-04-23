@@ -10,7 +10,7 @@ export type ServerDataCategorized = {
   }[];
 };
 
-export const mapServerInfoToCategoried = (
+export const mapServerInfoToCategories = (
   serverInfo: ServerDataResult,
   countryCodesList: CountryCodes,
 ): ServerDataCategorized[] => {

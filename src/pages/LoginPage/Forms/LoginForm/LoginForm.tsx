@@ -10,7 +10,7 @@ import { AxiosError } from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Loader } from 'components/Loader/Loader';
 import { useState } from 'react';
-import { displayToastError } from 'felpers/toasts';
+import { displayToastError } from 'helpers/toasts';
 
 const schema = yup
   .object({

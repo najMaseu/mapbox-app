@@ -6,7 +6,6 @@ import {
   chooseServerInfo,
 } from './Dashboard.styles';
 import { useServerData } from 'api/servers/useServerData';
-import { mapServerInfoToCategoried } from './helpers';
 import { useCountryCodes } from 'context/CountryCodesContext';
 import { Loader } from 'components/Loader/Loader';
 import { Collapsable } from 'components/Collapsable/Collapsable';
@@ -14,6 +13,7 @@ import { ServerEntry } from './ServerEntry/ServerEntry';
 import { ChangeEvent, useState } from 'react';
 import { SearchBar } from 'components/SearchBar/SearchBar';
 import { CurrentServerInfo } from './CurrentServerInfo/CurrentServerInfo';
+import { mapServerInfoToCategories } from 'helpers/mappers';
 
 export const Dashboard = () => {
   const { data, isLoading } = useServerData();
@@ -45,7 +45,7 @@ export const Dashboard = () => {
               <SearchBar onChange={handleSearch} value={searchValue} />
 
               <div className={serverList}>
-                {mapServerInfoToCategoried(data, codes)
+                {mapServerInfoToCategories(data, codes)
                   .filter((entry) =>
                     entry.countryName?.toLowerCase().includes(searchValue.toLowerCase()),
                   )
