@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Input from './Input';
+import { Input } from './Input';
 
 export default {
   title: 'Input',
@@ -20,6 +20,12 @@ export const Basic: StoryObj<typeof Input> = {
 export const Password: StoryObj<typeof Input> = {
   args: {
     type: 'password',
+  },
+};
+
+export const Ghost: StoryObj<typeof Input> = {
+  args: {
+    variant: 'ghost',
   },
 };
 

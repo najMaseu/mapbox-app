@@ -1,4 +1,4 @@
-import DoubleStack from './DoubleStack';
+import { DoubleStack } from './DoubleStack';
 import { Meta, StoryObj } from '@storybook/react';
 
 export default {

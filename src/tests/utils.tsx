@@ -1,4 +1,3 @@
-/* eslint-disable import/export */
 import { ReactElement } from 'react';
 
 import { render, type RenderOptions } from '@testing-library/react';

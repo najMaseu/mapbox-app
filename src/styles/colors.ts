@@ -11,4 +11,5 @@ export enum Colors {
   error = '#dd1f1f',
 
   lightGreyTransparent = 'rgba(246, 241, 241, 0.4)',
+  transparent = 'transparent',
 }

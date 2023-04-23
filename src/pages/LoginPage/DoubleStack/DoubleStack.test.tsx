@@ -1,4 +1,4 @@
-import DoubleStack from './DoubleStack';
+import { DoubleStack } from './DoubleStack';
 import { userEvent, render, screen } from 'tests/utils';
 
 describe('DoubleStack', () => {

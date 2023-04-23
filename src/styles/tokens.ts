@@ -27,6 +27,9 @@ export const Tokens = {
   inputDisabledBackground: Colors.grey,
   inputDisabledText: Colors.darkGrey,
 
+  inputGhostBackground: Colors.transparent,
+  inputGhostUnderline: Colors.darkOcean,
+
   textFieldErrorText: Colors.error,
 
   mainCardBackground: Colors.lightGrey,
@@ -41,4 +44,13 @@ export const Tokens = {
   loaderBackdrop: Colors.lightGreyTransparent,
 
   toastBackground: Colors.error,
+
+  loggedOutContentBackground: Colors.lightGrey,
+
+  accHeaderBackground: Colors.grey,
+  accHeaderBackgroundHover: Colors.darkGrey,
+  accHeaderBorder: Colors.darkOcean,
+  accElementBackground: Colors.lightGrey,
+
+  serverEntryBackgroundHover: Colors.grey,
 };

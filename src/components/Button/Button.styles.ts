@@ -6,10 +6,9 @@ export const buttonCommon = css({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  verticalAlign: 'middle',
   padding: '4px 15px',
   border: 'none',
-  borderRadius: 0,
+  borderRadius: '3px',
   fontWeight: 700,
   cursor: 'pointer',
   ':disabled': {
@@ -65,5 +64,3 @@ export const buttonGhost = css({
     transformOrigin: 'bottom left',
   },
 });
-
-export const buttonDisabled = css({});

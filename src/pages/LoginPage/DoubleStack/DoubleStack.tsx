@@ -18,12 +18,12 @@ interface DoubleStackProps {
   secondaryCardTitle: string;
 }
 
-function DoubleStack({
+export const DoubleStack = ({
   mainContent,
   secondaryConent,
   mainCardTitle,
   secondaryCardTitle,
-}: DoubleStackProps) {
+}: DoubleStackProps) => {
   const [isMainContentExpanded, setMainCardExtended] = useState(true);
 
   const switchVisibleCard = () => {
@@ -79,6 +79,4 @@ function DoubleStack({
       </div>
     </div>
   );
-}
-
-export default DoubleStack;
+};
