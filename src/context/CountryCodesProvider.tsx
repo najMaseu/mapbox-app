@@ -1,4 +1,3 @@
-import React from 'react';
 import { useQuery } from 'react-query';
 import { WithChildren } from 'types/common';
 import { CountryCodesContext } from './CountryCodesContext';

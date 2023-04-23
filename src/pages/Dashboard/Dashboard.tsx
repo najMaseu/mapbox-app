@@ -51,11 +51,12 @@ export const Dashboard = () => {
                   )
                   .sort((a, b) => a.countryName.localeCompare(b.countryName))
                   .map((entry) => (
-                    <Collapsable header={entry.countryName}>
+                    <Collapsable header={entry.countryName} key={entry.countryName}>
                       {entry.servers
                         .sort((a, b) => a.distance - b.distance)
-                        .map((server) => (
+                        .map((server, idx) => (
                           <ServerEntry
+                            key={entry.countryName + idx}
                             serverId={server.serverId}
                             distance={server.distance}
                             countryName={entry.countryName}
