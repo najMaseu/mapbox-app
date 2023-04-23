@@ -47,7 +47,7 @@ export const Dashboard = () => {
               <div className={serverList}>
                 {mapServerInfoToCategories(data, codes)
                   .filter((entry) =>
-                    entry.countryName?.toLowerCase().includes(searchValue.toLowerCase()),
+                    entry.countryName.toLowerCase().includes(searchValue.toLowerCase()),
                   )
                   .sort((a, b) => a.countryName.localeCompare(b.countryName))
                   .map((entry) => (
@@ -79,7 +79,7 @@ export const Dashboard = () => {
               <CurrentServerInfo
                 serverId={currentServer.serverId}
                 countryName={currentServer.countryName}
-                countryCode={currentServer?.countryCode}
+                countryCode={currentServer.countryCode}
                 distance={currentServer.distance}
               />
             ) : (

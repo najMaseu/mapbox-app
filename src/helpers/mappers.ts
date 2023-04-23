@@ -1,7 +1,7 @@
 import { first } from 'lodash';
 import { CountryCodes, ServerDataResult } from 'types/common';
 
-export type ServerDataCategorized = {
+type ServerDataCategorized = {
   countryName: string;
   countryCode: string;
   servers: {
@@ -31,9 +31,9 @@ export const mapServerInfoToCategories = (
 
   return serverDataDetailed.reduce<ServerDataCategorized[]>(
     (accumulator, { countryCode, countryName, serverId, distance }) => {
-      const itemToCheck = accumulator.find((item) => item.countryName === countryName);
+      const itemToAdd = accumulator.find((item) => item.countryName === countryName);
 
-      if (!itemToCheck) {
+      if (!itemToAdd) {
         return [
           ...accumulator,
           {
@@ -50,12 +50,12 @@ export const mapServerInfoToCategories = (
       }
 
       return [
-        ...accumulator.filter((category) => category.countryName !== itemToCheck.countryName),
+        ...accumulator.filter((category) => category.countryName !== itemToAdd.countryName),
         {
-          countryCode: itemToCheck.countryCode,
-          countryName: itemToCheck.countryName,
+          countryCode: itemToAdd.countryCode,
+          countryName: itemToAdd.countryName,
           servers: [
-            ...itemToCheck.servers,
+            ...itemToAdd.servers,
             {
               serverId,
               distance,
