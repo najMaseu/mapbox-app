@@ -17,11 +17,11 @@ export const serverList = css({
 export const serverListItem = css({
   display: 'flex',
   width: '100%',
-  borderTop: `1px solid ${Tokens.accHeaderBorder}`,
+  borderTop: `1px solid ${Tokens.collapHeaderBorder}`,
   padding: '8px',
 
   justifyContent: 'space-between',
-  backgroundColor: Tokens.accElementBackground,
+  backgroundColor: Tokens.collapElementBackground,
 });
 
 export const serverInfoContainer = css({

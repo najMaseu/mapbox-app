@@ -2,7 +2,6 @@ import { Colors } from './colors';
 
 export const Tokens = {
   text: Colors.darkOcean,
-
   backgroundNeutral: Colors.white,
 
   btnBackgroundColor: Colors.ocean,
@@ -48,10 +47,10 @@ export const Tokens = {
 
   loggedOutContentBackground: Colors.lightGrey,
 
-  accHeaderBackground: Colors.grey,
-  accHeaderBackgroundHover: Colors.darkGrey,
-  accHeaderBorder: Colors.darkOcean,
-  accElementBackground: Colors.lightGrey,
+  collapHeaderBackground: Colors.grey,
+  collapHeaderBackgroundHover: Colors.darkGrey,
+  collapHeaderBorder: Colors.darkOcean,
+  collapElementBackground: Colors.lightGrey,
 
   serverEntryBackgroundHover: Colors.grey,
 };
