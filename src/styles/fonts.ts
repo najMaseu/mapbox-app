@@ -5,6 +5,5 @@ html * {
   font-family: monospace;
   font-size: 1rem;
   color: ${Tokens.text};
-
 }
 `;

@@ -8,7 +8,7 @@ import {
   secondaryCard,
   secondaryCardTitleStyles,
   stackContainer,
-} from './DounleStack.styles';
+} from './DoubleStack.styles';
 import { cx } from '@emotion/css';
 
 interface DoubleStackProps {
