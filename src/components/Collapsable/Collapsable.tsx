@@ -5,15 +5,13 @@ import { ReactComponent as Chevron } from 'assets/chevron.svg';
 
 interface CollapsableProps extends WithChildren {
   header: string;
-  onHeaderClick?: () => void;
 }
 
-export const Collapsable = ({ header, children, onHeaderClick }: CollapsableProps) => {
+export const Collapsable = ({ header, children }: CollapsableProps) => {
   const [isCollapsed, setCollapsed] = useState(true);
 
   const handleHeaderClick = () => {
     setCollapsed((v) => !v);
-    if (onHeaderClick) onHeaderClick();
   };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {

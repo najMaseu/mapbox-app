@@ -1,4 +1,3 @@
-import React from 'react';
 import { WithChildren } from 'types/common';
 import { container, content, navbar } from './LoggedInLayout.styles';
 import { Button } from 'components/Button/Button';

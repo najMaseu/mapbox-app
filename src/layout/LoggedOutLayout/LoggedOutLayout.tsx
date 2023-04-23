@@ -1,4 +1,3 @@
-import React from 'react';
 import { container, content } from './LoggedOutLayout.styles';
 import { WithChildren } from 'types/common';
 

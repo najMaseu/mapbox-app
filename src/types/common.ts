@@ -6,4 +6,4 @@ export type WithChildren = {
 
 export type CountryCodes = Record<string, string>;
 
-export type ServerDataResult = { name: 'string'; distance: number }[];
+export type ServerDataResult = { name: string; distance: number }[];

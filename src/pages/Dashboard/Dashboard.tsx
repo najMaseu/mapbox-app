@@ -6,7 +6,6 @@ import {
   chooseServerInfo,
 } from './Dashboard.styles';
 import { useServerData } from 'api/servers/useServerData';
-import { mapServerInfoToCategoried } from './helpers';
 import { useCountryCodes } from 'context/CountryCodesContext';
 import { Loader } from 'components/Loader/Loader';
 import { Collapsable } from 'components/Collapsable/Collapsable';
@@ -14,6 +13,7 @@ import { ServerEntry } from './ServerEntry/ServerEntry';
 import { ChangeEvent, useState } from 'react';
 import { SearchBar } from 'components/SearchBar/SearchBar';
 import { CurrentServerInfo } from './CurrentServerInfo/CurrentServerInfo';
+import { mapServerInfoToCategories } from 'helpers/mappers';
 
 export const Dashboard = () => {
   const { data, isLoading } = useServerData();
@@ -45,17 +45,18 @@ export const Dashboard = () => {
               <SearchBar onChange={handleSearch} value={searchValue} />
 
               <div className={serverList}>
-                {mapServerInfoToCategoried(data, codes)
+                {mapServerInfoToCategories(data, codes)
                   .filter((entry) =>
-                    entry.countryName?.toLowerCase().includes(searchValue.toLowerCase()),
+                    entry.countryName.toLowerCase().includes(searchValue.toLowerCase()),
                   )
                   .sort((a, b) => a.countryName.localeCompare(b.countryName))
                   .map((entry) => (
-                    <Collapsable header={entry.countryName}>
+                    <Collapsable header={entry.countryName} key={entry.countryName}>
                       {entry.servers
                         .sort((a, b) => a.distance - b.distance)
-                        .map((server) => (
+                        .map((server, idx) => (
                           <ServerEntry
+                            key={entry.countryName + idx}
                             serverId={server.serverId}
                             distance={server.distance}
                             countryName={entry.countryName}
@@ -78,7 +79,7 @@ export const Dashboard = () => {
               <CurrentServerInfo
                 serverId={currentServer.serverId}
                 countryName={currentServer.countryName}
-                countryCode={currentServer?.countryCode}
+                countryCode={currentServer.countryCode}
                 distance={currentServer.distance}
               />
             ) : (

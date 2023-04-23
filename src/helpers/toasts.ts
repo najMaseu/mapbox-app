@@ -1,3 +1,4 @@
+import { css } from '@emotion/css';
 import { toast } from 'react-toastify';
 import { Tokens } from 'styles/tokens';
 
@@ -13,8 +14,17 @@ export const displayToastError = (msg: string) => {
     pauseOnHover: true,
     theme: 'colored',
     style: {
-      fontWeight: 700,
+      fontWeight: 500,
       background: Tokens.toastBackground,
     },
+    className: css({
+      label: 'test',
+      div: {
+        color: Tokens.toastText,
+      },
+      'svg > * ': {
+        fill: Tokens.toastText,
+      },
+    }),
   });
 };
