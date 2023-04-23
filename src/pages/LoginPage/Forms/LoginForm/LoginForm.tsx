@@ -1,16 +1,16 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import Button from 'components/Button/Button';
-import TextField from 'components/TextField/TextField';
+import { Button } from 'components/Button/Button';
+import { TextField } from 'components/TextField/TextField';
 import { form } from '../forms.styles';
 import { getToken } from 'api/auth/auth';
 import { useSignIn } from 'react-auth-kit';
 import { AxiosError } from 'axios';
 import { useNavigate } from 'react-router-dom';
-import Loader from 'components/Loader/Loader';
+import { Loader } from 'components/Loader/Loader';
 import { useState } from 'react';
-import { displayToastError } from 'felpers/toasts';
+import { displayToastError } from 'helpers/toasts';
 
 const schema = yup
   .object({
@@ -21,7 +21,7 @@ const schema = yup
 
 type FormData = yup.InferType<typeof schema>;
 
-function LoginForm() {
+export const LoginForm = () => {
   const signIn = useSignIn();
   const navigate = useNavigate();
   const [isLoaderVisible, setLoaderVisible] = useState(false);
@@ -73,6 +73,4 @@ function LoginForm() {
       {isLoaderVisible ? <Loader /> : null}
     </>
   );
-}
-
-export default LoginForm;
+};

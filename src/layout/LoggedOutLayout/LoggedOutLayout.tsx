@@ -1,15 +1,12 @@
-import React from 'react';
-import { WithChildren } from 'types/componentsCommon';
 import { container, content } from './LoggedOutLayout.styles';
+import { WithChildren } from 'types/common';
 
 type LoggedOutLayoutProps = WithChildren;
 
-function LoggedOutLayout({ children }: LoggedOutLayoutProps) {
+export const LoggedOutLayout = ({ children }: LoggedOutLayoutProps) => {
   return (
     <main className={container}>
       <div className={content}>{children}</div>
     </main>
   );
-}
-
-export default LoggedOutLayout;
+};

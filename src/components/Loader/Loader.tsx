@@ -1,6 +1,6 @@
 import { container, loader } from './Loader.styles';
 
-const Loader = () => (
+export const Loader = () => (
   <div className={container} role='progressbar'>
     <div className={loader}>
       <div></div>
@@ -10,5 +10,3 @@ const Loader = () => (
     </div>
   </div>
 );
-
-export default Loader;

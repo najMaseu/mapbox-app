@@ -7,7 +7,7 @@ interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'chi
   label: ReactNode;
 }
 
-function Button({ variant = 'color', label, ...passedProps }: ButtonProps) {
+export const Button = ({ variant = 'color', label, ...passedProps }: ButtonProps) => {
   return (
     <button
       className={cx(
@@ -21,6 +21,4 @@ function Button({ variant = 'color', label, ...passedProps }: ButtonProps) {
       {label}
     </button>
   );
-}
-
-export default Button;
+};

@@ -2,7 +2,6 @@ import { Colors } from './colors';
 
 export const Tokens = {
   text: Colors.darkOcean,
-
   backgroundNeutral: Colors.white,
 
   btnBackgroundColor: Colors.ocean,
@@ -27,6 +26,9 @@ export const Tokens = {
   inputDisabledBackground: Colors.grey,
   inputDisabledText: Colors.darkGrey,
 
+  inputGhostBackground: Colors.transparent,
+  inputGhostUnderline: Colors.darkOcean,
+
   textFieldErrorText: Colors.error,
 
   mainCardBackground: Colors.lightGrey,
@@ -41,4 +43,14 @@ export const Tokens = {
   loaderBackdrop: Colors.lightGreyTransparent,
 
   toastBackground: Colors.error,
+  toastText: Colors.white,
+
+  loggedOutContentBackground: Colors.lightGrey,
+
+  collapHeaderBackground: Colors.grey,
+  collapHeaderBackgroundHover: Colors.darkGrey,
+  collapHeaderBorder: Colors.darkOcean,
+  collapElementBackground: Colors.lightGrey,
+
+  serverEntryBackgroundHover: Colors.grey,
 };

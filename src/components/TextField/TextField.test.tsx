@@ -1,5 +1,5 @@
 import { render, screen, userEvent } from 'tests/utils';
-import TextField from './TextField';
+import { TextField } from './TextField';
 import { vi } from 'vitest';
 
 describe('TextField component', () => {

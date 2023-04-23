@@ -31,3 +31,11 @@ export const input = css({
     fontSize: '.75em',
   },
 });
+
+export const ghostInput = css({
+  backgroundColor: Tokens.inputGhostBackground,
+  border: 'none',
+  position: 'relative',
+  borderBottom: `2px solid ${Tokens.inputGhostUnderline}`,
+  borderRadius: 0,
+});

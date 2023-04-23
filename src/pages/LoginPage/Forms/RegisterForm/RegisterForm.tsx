@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import Button from 'components/Button/Button';
-import TextField from 'components/TextField/TextField';
+import { Button } from 'components/Button/Button';
+import { TextField } from 'components/TextField/TextField';
 import { form } from '../forms.styles';
 
 const schema = yup
@@ -22,7 +22,7 @@ const schema = yup
 
 type FormData = yup.InferType<typeof schema>;
 
-function RegisterForm() {
+export const RegisterForm = () => {
   const {
     register,
     handleSubmit,
@@ -52,6 +52,4 @@ function RegisterForm() {
       <Button label='Sign In' variant='grey' />
     </form>
   );
-}
-
-export default RegisterForm;
+};
